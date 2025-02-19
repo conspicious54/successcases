@@ -6,14 +6,34 @@
   NODE_VERSION = "20"
 
 [[headers]]
-  for = "/*"
+  for = "/"
     [headers.values]
     Content-Type = "text/html"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/*.html"
+    [headers.values]
+    Content-Type = "text/html"
+
+[[headers]]
+  for = "/*.js"
     [headers.values]
     Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.css"
+    [headers.values]
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/assets/*.js"
+    [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/assets/*.css"
+    [headers.values]
+    Content-Type = "text/css"
 
 [[redirects]]
   from = "/*"
