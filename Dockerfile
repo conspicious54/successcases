@@ -6,16 +6,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
 
 # Build the application
-RUN npm install && npm run build
-
-# Cleanup dev dependencies
-RUN npm prune --production
+RUN npm run build
 
 # Expose the port that Cloud Run will use
 ENV PORT=8080
